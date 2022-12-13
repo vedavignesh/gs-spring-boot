@@ -20,6 +20,13 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      cd target
+      ls
+      pwd
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
